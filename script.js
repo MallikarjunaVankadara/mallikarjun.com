@@ -22,13 +22,13 @@ const SKILLS = [
 ];
 const PROJECTS = [
   {title:"Data Center → Azure Migration",category:"CLOUD TRANSFORMATION",description:"Contributed to the migration of 300+ on-premises servers to Azure, combining Linux and virtualization expertise with change coordination, stakeholder alignment, CAB approvals, and migration tracking.",tags:["Azure","Linux","VMware","Change Management","Stakeholder Alignment"],status:"MIGRATED",episode:"S01 E01"},
-  {title:"Enterprise Healthcare Product Reliability",category:"GLOBAL HEALTHCARE PRODUCT",description:"Supported a mission-critical global healthcare product across the US, UK and Middle East, owning customer issues end-to-end, improving recurring workflows, and translating customer feedback into technical and product improvements.",tags:["Customer Insights","Product Improvement","Cross-Functional","Healthcare","Enterprise Systems"],match:"98%",episode:"S01 E02"},
-  {title:"First-Footprint Deployment",category:"AZURE INFRASTRUCTURE",description:"Delivered infrastructure milestones for the India South Central Azure region across compute, storage, DNS and Azure Key Vault, contributing to the region’s foundational cloud capacity.",tags:["Azure Infrastructure","Compute & Storage","Network Readiness","Region Build","Milestone Delivery"],match:"97%",episode:"S01 E03"},
-  {title:"Azure Region Network Live",category:"NETWORK INFRASTRUCTURE",description:"Contributed to network readiness for the India South Central Azure region, translating infrastructure designs into physical network deployments and coordinating across teams to drive the Network Live milestone.",tags:["Cross-Team Delivery","Dependency Management","Region Build"],match:"99%",episode:"S01 E04"},
-  {title:"GPU Infrastructure for AI Workloads",category:"AI INFRASTRUCTURE",description:"Contributed to the deployment of liquid-cooled NVIDIA GB300 GPU infrastructure within the India South Central Azure region, supporting infrastructure readiness for Copilot and AI workloads.",tags:["NVIDIA GB300","AI Infrastructure","GPU Infrastructure","Copilot"],match:"96%",episode:"S01 E05"},
-  {title:"Product Portfolio Experience",category:"PRODUCT × ENGINEERING",description:"Designed and built an interactive portfolio that translates my engineering experience, customer insights and product thinking into a cohesive digital product experience.",tags:["Product Storytelling","Product Thinking","AI-Assisted Development","JavaScript","UX"],match:"99%",episode:"S01 E06"},
+  {title:"Enterprise Healthcare Product Reliability",category:"GLOBAL HEALTHCARE PRODUCT",description:"Supported a mission-critical global healthcare product across the US, UK and Middle East, owning customer issues end-to-end, improving recurring workflows, and translating customer feedback into technical and product improvements.",tags:["Customer Insights","Product Improvement","Cross-Functional","Healthcare","Enterprise Systems"],status:"IMPROVED",episode:"S01 E02"},
+  {title:"First-Footprint Deployment",category:"AZURE INFRASTRUCTURE",description:"Delivered infrastructure milestones for the India South Central Azure region across compute, storage, DNS and Azure Key Vault, contributing to the region’s foundational cloud capacity.",tags:["Azure Infrastructure","Compute & Storage","Network Readiness","Region Build","Milestone Delivery"],status:"DELIVERED",episode:"S01 E03"},
+  {title:"Azure Region Network Live",category:"NETWORK INFRASTRUCTURE",description:"Contributed to network readiness for the India South Central Azure region, translating infrastructure designs into physical network deployments and coordinating across teams to drive the Network Live milestone.",tags:["Cross-Team Delivery","Dependency Management","Region Build"],status:"LIVE",episode:"S01 E04"},
+  {title:"GPU Infrastructure for AI Workloads",category:"AI INFRASTRUCTURE",description:"Contributed to the deployment of liquid-cooled NVIDIA GB300 GPU infrastructure within the India South Central Azure region, supporting infrastructure readiness for Copilot and AI workloads.",tags:["NVIDIA GB300","AI Infrastructure","GPU Infrastructure","Copilot"],status:"DEPLOYED",episode:"S01 E05"},
+  {title:"Product Portfolio Experience",category:"PRODUCT × ENGINEERING",description:"Designed and built an interactive portfolio that translates my engineering experience, customer insights and product thinking into a cohesive digital product experience.",tags:["Product Storytelling","Product Thinking","AI-Assisted Development","JavaScript","UX"],status:"BUILT",episode:"S01 E06"},
   {title:"In Progress",category:"In Progress",description:"In Progress",tags:["In Progress"],episode:"In Progress"},
-  {title:"UpComing",category:"UpComing",description:"UpComing",tags:["UpComing"],,episode:"UpComing"}
+  {title:"UpComing",category:"UpComing",description:"UpComing",tags:["UpComing"],episode:"UpComing"}
 ];
 
 const gsap = window.gsap;
@@ -87,7 +87,7 @@ PROJECTS.forEach(p => {
   c.className = "dcard";
   c.innerHTML = `
     <div class="dcard-in">
-      <div class="dc-top"><span class="dc-ep">${p.episode}</span><span class="dc-match">${p.status} MATCH</span></div>
+      <div class="dc-top"><span class="dc-ep">${p.episode}</span><span class="dc-match">${p.status || ""}</span></div>
       <div class="dc-body">
         <div class="dc-cat">${p.category}</div>
         <h3>${p.title}</h3>
